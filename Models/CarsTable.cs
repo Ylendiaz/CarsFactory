@@ -15,7 +15,7 @@ namespace CarsFactoryWebAPI.Models
         public string Año { get; set; }
         public string Estado { get; set; }
         public decimal? Precio { get; set; }
-        public byte[] Imagen { get; set; }
+        public string Imagen { get; set; }
         public DateTime? FechaModificacion { get; set; }
     }
 }
