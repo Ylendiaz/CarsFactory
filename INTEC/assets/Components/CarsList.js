@@ -38,18 +38,18 @@ class CarsList extends Component{
         if(isLoading){
             return(
                     <View>
-                        <View style={styles.container}>
-                            <Image source={image} style = {{resizeMode:"cover", width: 100, height: 100, marginLeft: '36%'}}></Image>
+                        <View style={{flex: 1, alignSelf: "center"}}>
+                            <Image source={image} style = {{resizeMode:"cover", width: 50, height: 50}}></Image>
                         </View>
                     </View>
             );
-
         }
 
         return(
             <View style={cedulaListStyle.viewMain}>
                 <FlatList data={data} keyExtractor={({id_cars},index) => id_cars}
                     renderItem={({item}) => {
+                        var imagenurl = item.imagen;
                         return <>
                             <View style={cedulaListStyle.viewList}>
                                 <Text>Codigo: {item.codigo}</Text>
@@ -59,7 +59,7 @@ class CarsList extends Component{
                                 <Text>Año: {item.año}</Text>
                                 <Text>Estado: {item.estado}</Text>
                                 <Text>Precio: {item.precio}</Text>
-                                <Text>Imagen: {item.imagen}</Text>
+                                <Image style={{ resizeMode: "contain", height: 100, width: 200, borderWidth: 1 }} source={{ uri: imagenurl }} />
                             </View>
                         </>
                     }} />
@@ -69,15 +69,5 @@ class CarsList extends Component{
     }
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    image: {
-      flex: 1,
-      justifyContent: "center"
-    }
-});
 
 export default CarsList;
