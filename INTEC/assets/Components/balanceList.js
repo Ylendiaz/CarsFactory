@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {FlatList, ScrollView, StatusBar, Text, View} from "react-native";
-import balancedListStyle from '../assets/styles/balancedListStyle';
+import balancedListStyle from '../styles/balancedListStyle';
 
 const data = [
     {id: 1, balance: 9000000, dataAdded: 20221231, isCredit: true, categoryId: 1},
