@@ -65,9 +65,7 @@ class CarsList extends Component{
                     }} />
             </View>
         )
-
         
-
     }
 
 }
