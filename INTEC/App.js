@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import BalanceList from './assets/Components/balanceList';
-import CedulaList from './assets/components/cedulaList';
 import cedulaListStyle from './assets/styles/cedulaListStyle';
+import CarsList from './assets/Components/CarsList';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CedulaList/>
+      <CarsList/>
       <StatusBar style="auto" />
     </View>
   );
