@@ -15,28 +15,28 @@ class CarsList extends Component{
         };
     }
 
-    async getCars() {
-        try {
+    async getCars(){
+        try{
             const response = await fetch('https://localhost:7011/api/CarsTables');
             const json = await response.json();
-            this.setState({ data: json });
+            this.setState({data:json});
         }
-        catch (error) {
-            console.log('Error API', error);
+        catch(error){
+            console.log('Error API',error);
         }
-        finally {
-            this.setState({ isLoading: false });
+        finally{
+            this.setState({isLoading:false});
         }
     }
 
-    componentDidMount() {
+    componentDidMount(){
         this.getCars();
     }
 
-    render() {
-        const { data, isLoading } = this.state;
-        if (isLoading) {
-            return (
+    render(){
+        const {data,isLoading} = this.state;
+        if(isLoading){
+            return(
                 <View>
                 <View style={styles.container}>
                 <Image source={image} style = {{resizeMode:"cover", width: 100, height: 100, marginLeft: '36%'}}>
@@ -47,12 +47,10 @@ class CarsList extends Component{
 
         }
 
-        return (
-
+        return(
             <View style={cedulaListStyle.viewMain}>
-                <FlatList data={data} keyExtractor={({ id_cars }, index) => id_cars}
-                    renderItem={({ item }) => {
-                        var imagenurl = item.imagen;
+                <FlatList data={data} keyExtractor={({id_cars},index) => id_cars}
+                    renderItem={({item}) => {
                         return <>
                             <View style={cedulaListStyle.viewList}>
                                 <Text>Codigo: {item.codigo}</Text>
@@ -62,7 +60,7 @@ class CarsList extends Component{
                                 <Text>Año: {item.año}</Text>
                                 <Text>Estado: {item.estado}</Text>
                                 <Text>Precio: {item.precio}</Text>
-                                <Image style={{ resizeMode: "contain", height: 100, width: 200, borderWidth: 1 }} source={{ uri: imagenurl }} />
+                                <Text>Imagen: {item.imagen}</Text>
                             </View>
                         </>
                     }} />
