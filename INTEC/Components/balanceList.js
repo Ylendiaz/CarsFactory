@@ -42,5 +42,4 @@ class BalanceList extends Component{
         ); 
     }    
 }
-
 export default BalanceList;
