@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StatusBar } from 'expo-status-bar';
-<<<<<<< HEAD
 import { Image, StyleSheet, Text, View, ActivityIndicator, FlatList } from 'react-native';
 import cedulaListStyle from '../styles/cedulaListStyle';
 
@@ -8,13 +7,6 @@ const image = { uri: "https://i.stack.imgur.com/kOnzy.gif" };
 
 class CarsList extends Component{
     constructor(props){
-=======
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, Image } from 'react-native';
-import cedulaListStyle from '../styles/cedulaListStyle';
-
-class CarsList extends Component {
-    constructor(props) {
->>>>>>> 35e2fd530381bd82de2ef295b6805cd2bab89420
         super(props);
 
         this.state = {
@@ -46,14 +38,10 @@ class CarsList extends Component {
         if (isLoading) {
             return (
                 <View>
-<<<<<<< HEAD
                 <View style={styles.container}>
                 <Image source={image} style = {{resizeMode:"cover", width: 100, height: 100, marginLeft: '36%'}}>
                 </Image>
                 </View>
-=======
-                    <Text>Descargando lista</Text>
->>>>>>> 35e2fd530381bd82de2ef295b6805cd2bab89420
                 </View>
             );
 
@@ -80,9 +68,7 @@ class CarsList extends Component {
                     }} />
             </View>
         )
-
         
-
     }
 
 }
