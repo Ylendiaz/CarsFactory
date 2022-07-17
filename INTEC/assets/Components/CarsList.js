@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList } from 'react-native';
+import { Image, StyleSheet, Text, View, ActivityIndicator, FlatList } from 'react-native';
 import cedulaListStyle from '../styles/cedulaListStyle';
+
+const image = { uri: "https://i.stack.imgur.com/kOnzy.gif" };
 
 class CarsList extends Component{
     constructor(props){
@@ -36,9 +38,13 @@ class CarsList extends Component{
         if(isLoading){
             return(
                 <View>
-                   <Text>Descargando lista</Text> 
+                <View style={styles.container}>
+                <Image source={image} style = {{resizeMode:"cover", width: 100, height: 100, marginLeft: '36%'}}>
+                </Image>
+                </View>
                 </View>
             );
+
         }
 
         return(
@@ -61,8 +67,20 @@ class CarsList extends Component{
             </View>
         )
 
+        
+
     }
 
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    image: {
+      flex: 1,
+      justifyContent: "center"
+    }
+});
 
 export default CarsList;
