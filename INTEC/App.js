@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import carsListStyle from './assets/styles/carsListStyle';
 import CarsList from './assets/Components/CarsList';
 
-
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text style={carsListStyle.Title}>Cars Factory </Text>
       <CarsList/>
       <StatusBar style="auto" />
     </View>

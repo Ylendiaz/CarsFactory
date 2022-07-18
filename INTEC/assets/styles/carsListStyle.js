@@ -4,7 +4,7 @@ const carsListStyle = StyleSheet.create(
     {
         viewMain: {
             flex: 1,
-            marginTop: 80,
+            
             marginBottom: 80,
             borderTopWidth: 2,
             borderBottomWidth: 2,
@@ -61,6 +61,18 @@ const carsListStyle = StyleSheet.create(
             alignItems: "center",
             fontSize: 14,
             marginBottom: 2
+        },
+
+        Title: {
+            
+            color: "black",
+            fontSize: 42,
+            lineHeight: 95,
+            fontWeight: "bold",
+            fontStyle: 'italic',
+            textAlign: "center",
+            alignItems: "center",
+            marginBottom: 2      
         }
     }
 );
