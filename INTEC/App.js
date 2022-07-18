@@ -5,7 +5,6 @@ import CarsList from './assets/Components/CarsList';
 import Home from './assets/Components/Home';
 import AppNavigator from './assets/Components/Navigator';
 
-
 export default function App() {
   return (
     <View style={styles.container}>

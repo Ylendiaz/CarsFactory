@@ -10,7 +10,7 @@ const carsListStyle = StyleSheet.create(
         
         viewMain: {
             flex: 1,
-            marginTop: 80,
+            
             marginBottom: 80,
             borderTopWidth: 2,
             borderBottomWidth: 2,
