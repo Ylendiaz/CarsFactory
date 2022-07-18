@@ -37,10 +37,8 @@ class CarsList extends Component {
         const { data, isLoading } = this.state;
         if (isLoading) {
             return (
-                <View>
-                    <View style={{ flex: 1, alignSelf: "center" }}>
-                        <Image source={image} style={{ resizeMode: "cover", width: 50, height: 50 }}></Image>
-                    </View>
+                <View style={carsListStyle.viewLoading}>
+                    <Image source={image} style={{ resizeMode: "cover", width: 50, height: 50 }}></Image>
                 </View>
             );
         }

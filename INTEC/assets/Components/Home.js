@@ -11,8 +11,7 @@ const Home = ({navigation}) => {
             <Text style={styles.text}>Cars Factory</Text>
             <Button title="Go" onPress={() => navigation.navigate('CarsList')}/>
         </ImageBackground>
-        
-    </>
+      </>
 }
 
 export default Home;

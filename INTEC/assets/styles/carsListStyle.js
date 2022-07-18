@@ -2,20 +2,10 @@ import { StyleSheet } from "react-native";
 
 const carsListStyle = StyleSheet.create(
     {
-        container: {
-            flex: 1,
-            backgroundColor: 'darkred',
-            justifyContent: 'center',
-          },
-        
-        viewMain: {
-            flex: 1,
-            
-            marginBottom: 80,
-            borderTopWidth: 2,
-            borderBottomWidth: 2,
-            width: '100%',
-            backgroundColor: 'ghostwhite'
+        viewLoading:{
+            flex: 1, 
+            alignSelf: "center", 
+            justifyContent: 'center'
         },
 
         viewList: {
@@ -36,7 +26,6 @@ const carsListStyle = StyleSheet.create(
             alignItems: "center",
             textAlign: "center",
             fontSize: 16,
-            // fontWeight: "bold",
             color: "white",
             marginBottom: 5,
             borderRadius: 5,
@@ -47,7 +36,6 @@ const carsListStyle = StyleSheet.create(
         viewInfo: {
             flexDirection: "row",
             marginBottom: 5,
-            //backgroundColor: 'blue',
             marginTop: 8,
             marginBottom: 0,
             borderBottomWidth: 1,
@@ -68,18 +56,6 @@ const carsListStyle = StyleSheet.create(
             fontSize: 14,
             marginBottom: 2
         },
-        textTitle: {
-            flex: 1,
-            color: "black",
-            fontSize: 42,
-            lineHeight: 95,
-            fontWeight: "bold",
-            fontStyle: 'italic',
-            textAlign: "center",
-            alignItems: "center",
-            marginBottom: 2
-            // backgroundColor: "#2C3639"
-          },
     }
 );
 
