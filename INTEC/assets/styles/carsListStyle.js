@@ -2,6 +2,12 @@ import { StyleSheet } from "react-native";
 
 const carsListStyle = StyleSheet.create(
     {
+        container: {
+            flex: 1,
+            backgroundColor: 'darkred',
+            justifyContent: 'center',
+          },
+        
         viewMain: {
             flex: 1,
             marginTop: 80,
@@ -61,7 +67,19 @@ const carsListStyle = StyleSheet.create(
             alignItems: "center",
             fontSize: 14,
             marginBottom: 2
-        }
+        },
+        textTitle: {
+            flex: 1,
+            color: "black",
+            fontSize: 42,
+            lineHeight: 95,
+            fontWeight: "bold",
+            fontStyle: 'italic',
+            textAlign: "center",
+            alignItems: "center",
+            marginBottom: 2
+            // backgroundColor: "#2C3639"
+          },
     }
 );
 

@@ -46,7 +46,6 @@ class CarsList extends Component {
         }
 
         return (
-            <View style={carsListStyle.viewMain}>
                 <FlatList data={data} keyExtractor={({ id_cars }, index) => id_cars}
                     renderItem={({ item }) => {
                         var imagenurl = item.imagen;
@@ -77,7 +76,6 @@ class CarsList extends Component {
                             </View>
                         </>
                     }} />
-            </View>
         )
 
     }
