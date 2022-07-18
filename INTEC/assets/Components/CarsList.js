@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, ActivityIndicator, FlatList } from 'react-native';
-import cedulaListStyle from '../styles/cedulaListStyle';
+import carsListStyle from '../styles/carsListStyle';
 
 const image = { uri: "https://i.stack.imgur.com/kOnzy.gif" };
 
-class CarsList extends Component{
-    constructor(props){
+class CarsList extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -15,57 +15,71 @@ class CarsList extends Component{
         };
     }
 
-    async getCars(){
-        try{
+    async getCars() {
+        try {
             const response = await fetch('https://localhost:7011/api/CarsTables');
             const json = await response.json();
-            this.setState({data:json});
+            this.setState({ data: json });
         }
-        catch(error){
-            console.log('Error API',error);
+        catch (error) {
+            console.log('Error API', error);
         }
-        finally{
-            this.setState({isLoading:false});
+        finally {
+            this.setState({ isLoading: false });
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getCars();
     }
 
-    render(){
-        const {data,isLoading} = this.state;
-        if(isLoading){
-            return(
-                    <View>
-                        <View style={{flex: 1, alignSelf: "center"}}>
-                            <Image source={image} style = {{resizeMode:"cover", width: 50, height: 50}}></Image>
-                        </View>
+    render() {
+        const { data, isLoading } = this.state;
+        if (isLoading) {
+            return (
+                <View>
+                    <View style={{ flex: 1, alignSelf: "center" }}>
+                        <Image source={image} style={{ resizeMode: "cover", width: 50, height: 50 }}></Image>
                     </View>
+                </View>
             );
         }
 
-        return(
-            <View style={cedulaListStyle.viewMain}>
-                <FlatList data={data} keyExtractor={({id_cars},index) => id_cars}
-                    renderItem={({item}) => {
+        return (
+            <View style={carsListStyle.viewMain}>
+                <FlatList data={data} keyExtractor={({ id_cars }, index) => id_cars}
+                    renderItem={({ item }) => {
                         var imagenurl = item.imagen;
                         return <>
-                            <View style={cedulaListStyle.viewList}>
-                                <Text>Codigo: {item.codigo}</Text>
-                                <Text>Tipo: {item.tipo}</Text>
-                                <Text>Marca: {item.marca}</Text>
-                                <Text>Modelo: {item.modelo}</Text>
-                                <Text>Año: {item.año}</Text>
-                                <Text>Estado: {item.estado}</Text>
-                                <Text>Precio: {item.precio}</Text>
-                                <Image style={{ resizeMode: "contain", height: 100, width: 200, borderWidth: 1 }} source={{ uri: imagenurl }} />
+                            <View style={carsListStyle.viewList}>
+                                <Image style={{ resizeMode: "cover", height: 150, width: 300, borderWidth: 1 }} source={{ uri: imagenurl }} />
+                                <Text style={carsListStyle.textCar}>{item.marca} {item.modelo}</Text>
+                                <View style={carsListStyle.viewInfo}>
+                                    <Text style={carsListStyle.textAll}>Codigo: </Text>
+                                    <Text style={carsListStyle.textDB}>{item.codigo}</Text>
+                                </View>
+                                <View style={carsListStyle.viewInfo}>
+                                    <Text style={carsListStyle.textAll}>Tipo: </Text>
+                                    <Text style={carsListStyle.textDB}>{item.tipo}</Text>
+                                </View>
+                                <View style={carsListStyle.viewInfo}>
+                                    <Text style={carsListStyle.textAll}>Año: </Text>
+                                    <Text style={carsListStyle.textDB}>{item.año}</Text>
+                                </View>
+                                <View style={carsListStyle.viewInfo}>
+                                    <Text style={carsListStyle.textAll}>Estado: </Text>
+                                    <Text style={carsListStyle.textDB}>{item.estado}</Text>
+                                </View>
+                                <View style={carsListStyle.viewInfo}>
+                                    <Text style={carsListStyle.textAll}>Precio: </Text>
+                                    <Text style={carsListStyle.textDB}>RD$ {item.precio}</Text>
+                                </View>
                             </View>
                         </>
                     }} />
             </View>
         )
-        
+
     }
 
 }

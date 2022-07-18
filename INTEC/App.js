@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import cedulaListStyle from './assets/styles/cedulaListStyle';
+import carsListStyle from './assets/styles/carsListStyle';
 import CarsList from './assets/Components/CarsList';
 
 
@@ -16,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightslategrey',
+    backgroundColor: 'darkred',
     justifyContent: 'center',
   },
 });
